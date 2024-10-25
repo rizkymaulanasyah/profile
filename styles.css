@@ -1,0 +1,567 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #4e54c8, #8f94fb); /* Gradasi biru ke ungu */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Mengatur agar bagian tidak tertumpuk */
+    height: auto; /* Mengizinkan scroll */
+    flex-direction: column; /* Atur agar bisa scroll */
+    min-height: 100vh; /* Memastikan minimal tinggi halaman penuh */
+}
+
+/* Container Umum */
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px; /* Tambahkan margin bawah untuk jarak dengan skill section */
+    width: 90%; /* Lebar kontainer agar lebih responsif */
+    max-width: 800px; /* Maksimal lebar kontainer */
+    text-align: center; /* Memusatkan teks secara horizontal */ 
+    justify-content: center;
+}
+
+/* Gambar Profil */
+.profile-image {
+    width: 120px; /* Ukuran gambar */
+    height: 120px; /* Ukuran gambar */
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #007bff; /* Border berwarna biru */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Bayangan */
+}
+
+/* Judul dan Paragraf */
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333; /* Warna judul */
+}
+
+p {
+    color: #666;
+    margin: 10px 0 20px;
+}
+
+/* Links */
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links a {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Menambahkan untuk memusatkan ikon dan teks */
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 200px; /* Sesuaikan lebar link */
+}
+
+.links a i {
+    margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+.links a:hover {
+    background-color: #0056b3;
+}
+
+/* Untuk layar lebar (laptop atau desktop) */
+@media (min-width: 1024px) {
+    .container {
+        width: 50%; /* Lebar container pada layar besar */
+    }
+    
+    h1 {
+        font-size: 3em; /* Ukuran teks judul lebih besar */
+    }
+
+    .profile-image {
+        width: 150px; /* Ukuran gambar lebih besar */
+        height: 150px; /* Ukuran gambar lebih besar */
+    }
+
+    .links a {
+        width: 250px; /* Lebar link lebih besar */
+    }
+}
+
+/* Untuk layar sedang (tablet) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .container {
+        width: 70%; /* Lebar pada tablet */
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .profile-image {
+        width: 120px; /* Ukuran gambar pada tablet */
+        height: 120px; /* Ukuran gambar pada tablet */
+    }
+
+    .links a {
+        width: 220px; /* Lebar link pada tablet */
+    }
+}
+
+/* Untuk layar kecil (smartphone) */
+@media (max-width: 768px) {
+    .container {
+        width: 90%; /* Lebar di layar kecil */
+    }
+
+    h1 {
+        font-size: 2em; /* Ukuran teks pada layar kecil */
+    }
+
+    .profile-image {
+        width: 100px; /* Ukuran gambar pada layar kecil */
+        height: 100px; /* Ukuran gambar pada layar kecil */
+    }
+
+    .links a {
+        width: 200px; /* Lebar link pada layar kecil */
+    }
+}
+
+/* Profil Section */
+.profile-section {
+    margin-bottom: 40px; /* Jarak antara profil dan skill */
+}
+
+/* Skills Section */
+.skills-section {
+    margin-top: 20px; /* Jarak atas untuk keterbacaan */
+}
+
+.skills-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333; /* Warna judul skill */
+}
+
+/* Skills Container */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* Jarak antar skill card */
+}
+
+/* Skill Card */
+.skill-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px; /* Ukuran card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px); /* Efek hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card h3 {
+    font-size: 1.5em; /* Ukuran judul skill */
+    color: #4e54c8; /* Warna judul skill */
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #666; /* Warna deskripsi skill */
+    font-size: 1em;
+}
+
+/* Responsiveness untuk layar kecil */
+@media (max-width: 768px) {
+    .skills-container {
+        flex-direction: column; /* Skill card dalam kolom di layar kecil */
+        align-items: center;
+    }
+}
+
+nav {
+    background-color: #ffffff; /* Warna latar belakang navigasi */
+    padding: 10px; /* Jarak dalam navigasi */
+    position: fixed; /* Tetap di atas saat scroll */
+    width: 100%; /* Lebar penuh */
+    top: 0; /* Posisi di atas */
+    z-index: 1000; /* Pastikan di atas elemen lain */
+}
+
+.navbar {
+    list-style: none; /* Hapus bullet */
+    display: flex; /* Atur item dalam satu baris */
+    justify-content: center; /* Pusatkan item */
+}
+
+.navbar li {
+    margin: 0 20px; /* Jarak antara item */
+}
+
+.navbar a {
+    text-decoration: none; /* Hapus garis bawah */
+    color: #4e54c8; /* Warna teks */
+    font-weight: bold; /* Teks tebal */
+}
+
+.navbar a:hover {
+    color: #0056b3; /* Warna saat hover */
+}
+
+/* Scroll behavior untuk smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Jarak atas konten saat di-scroll */
+section {
+    scroll-margin-top: 70px; /* Sesuaikan dengan tinggi navbar */
+}
+
+.navbar a:hover {
+    color: #0056b3; /* Warna saat hover */
+}
+<style>
+        /* CSS navigasi */
+        nav {
+            background-color: #ffffff; /* Warna latar belakang navigasi */
+            padding: 10px; /* Jarak dalam navigasi */
+            position: fixed; /* Tetap di atas saat scroll */
+            width: 100%; /* Lebar penuh */
+            top: 0; /* Posisi di atas */
+            z-index: 1000; /* Pastikan di atas elemen lain */
+        }
+
+        .navbar {
+            list-style: none; /* Hapus bullet */
+            display: flex; /* Atur item dalam satu baris */
+            justify-content: center; /* Pusatkan item */
+        }
+
+        .navbar li {
+            margin: 0 20px; /* Jarak antara item */
+        }
+
+        .navbar a {
+            text-decoration: none; /* Hapus garis bawah */
+            color: #4e54c8; /* Warna teks */
+            font-weight: bold; /* Teks tebal */
+        }
+
+        .navbar a:hover {
+            color: #0056b3; /* Warna saat hover */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Atur agar bisa scroll */
+            align-items: center; /* Memusatkan secara horizontal */
+            height: auto; /* Mengatur tinggi konten */
+            padding-top: 70px; /* Jarak agar tidak tertutup navigasi */
+            overflow: 2000px; /* Mengizinkan scroll jika konten terlalu panjang */
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px; /* Menambah jarak luar */
+            width: 100%; /* Lebar penuh */
+            max-width: 600px; /* Maksimal lebar konten */
+            overflow: 2000px; /* Memungkinkan scroll jika terlalu panjang */
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        p {
+            color: #666;
+            margin: 10px 0 20px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .links a {
+            display: flex;
+            align-items: center;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            width: 200px;
+        }
+
+        .links a i {
+            margin-right: 10px;
+        }
+
+        .links a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Skills Section */
+        /* Bagian My Skills */
+.skills-section {
+    text-align: center; /* Memusatkan teks secara horizontal */
+    margin: 40px 0; /* Jarak atas dan bawah yang lebih besar */
+    padding: 50px 20px; /* Tambahkan padding untuk jarak dalam */
+    background: linear-gradient(135deg, #2c3e50, #3498db); /* Gradasi warna biru gelap dan biru terang */
+    border-radius: 15px; /* Membuat sudut yang melengkung */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan untuk efek elegan */
+}
+
+.skills-title {
+    font-size: 2.5rem; /* Ukuran font lebih besar */
+    color: #ffffff; /* Warna teks putih */
+    margin-bottom: 30px; /* Jarak bawah yang lebih besar */
+}
+
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-card {
+    background-color: #ffffff; /* Warna latar belakang putih untuk kontras */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.skill-card h3 {
+    font-size: 1.5em;
+    color: #3498db; /* Warna teks biru terang untuk konsistensi */
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    color: #666;
+    font-size: 1em;
+}
+
+
+        /* Responsiveness for smaller screens */
+        @media (max-width: 768px) {
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+    .certificates-section {
+        text-align: center; /* Memusatkan teks secara horizontal */
+        margin: 40px 0; /* Jarak atas dan bawah */
+    }
+    
+    .certificates-title {
+        text-align: center; /* Memusatkan teks */
+        margin: 20px 0; /* Jarak atas dan bawah */
+        font-size: 2em; /* Sesuaikan ukuran font sesuai kebutuhan */
+        color: #333; /* Warna teks, sesuaikan jika perlu */
+    }
+    
+    .certificates-container {
+        display: flex;
+        justify-content: center; /* Memusatkan kartu sertifikat */
+        flex-wrap: wrap; /* Mengizinkan kartu untuk melipat ke baris baru */
+        gap: 20px; /* Jarak antar kartu */
+        max-width: 1000px; /* Maksimal lebar kontainer */
+        margin: 0 auto; /* Memusatkan kontainer */
+    }
+    
+    .certificate-card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        width: 250px; /* Lebar kartu */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .certificate-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+    
+    .certificate-image {
+        width: 100%; /* Lebar gambar sesuai kartu */
+        border-radius: 10px; /* Sudut melingkar */
+        margin-bottom: 10px; /* Jarak antara gambar dan judul */
+    }
+    
+    .certificate-card h3 {
+        font-size: 1.5em;
+        color: #4e54c8; /* Warna teks untuk judul sertifikat */
+        margin-bottom: 10px; /* Jarak antara judul dan deskripsi */
+    }
+    
+    .certificate-card p {
+        color: #666; /* Warna deskripsi */
+        font-size: 1em;
+        margin-bottom: 10px; /* Jarak antara deskripsi dan tautan */
+    }
+    
+    .certificate-card a {
+        text-decoration: none; /* Hapus garis bawah */
+        color: #007bff; /* Warna tautan */
+        font-weight: bold; /* Teks tebal */
+        transition: color 0.3s; /* Efek transisi warna */
+    }
+    
+    .certificate-card a:hover {
+        color: #0056b3; /* Warna tautan saat hover */
+    }    
+
+    /* Section Developer */
+.developer-section {
+    background: linear-gradient(135deg, #2c3e50, #3498db); /* Gradasi warna elegan dari biru tua ke biru muda */
+    color: #ffffff;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 20000px; /* Jarak dari bagian di atas (Sertifikat) */
+}
+
+.developer-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #ecf0f1; /* Warna judul putih terang */
+}
+
+.developer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.developer-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid #ffffff; /* Border putih */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.developer-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.developer-info p {
+    font-size: 1.1rem;
+    color: #bdc3c7; /* Teks warna abu-abu terang */
+    max-width: 6000px;
+    margin: 20 auto 20px;
+}
+
+.developer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.developer-links a {
+    background-color: #34495e;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.developer-links a i {
+    margin-right: 10px;
+}
+
+.developer-links a:hover {
+    background-color: #2c3e50; /* Warna saat di-hover */
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .developer-container {
+        flex-direction: column;
+    }
+
+    .developer-info p {
+        padding: 10 30px; /* Tambahkan jarak pada layar kecil */
+    }
+}
+
+  
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in animation for navbar */
+.navbar-slide {
+    transform: translateY(-100%);
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateY(0);
+    }
+}
